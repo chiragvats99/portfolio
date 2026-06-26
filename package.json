@@ -1,0 +1,10 @@
+{
+  "name": "chirag-vats-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free portfolio website for Chirag Vats.",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "build": "node -e \"const fs=require('fs'); ['index.html','styles.css','script.js','.nojekyll','.github/workflows/pages.yml','public/images/oracle-session.jpg','public/images/roundtable.jpg','public/images/networking-moment.jpg','public/chirag-vats-resume.pdf'].forEach((file)=>fs.accessSync(file)); console.log('Static portfolio ready');\""
+  }
+}
