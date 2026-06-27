@@ -640,8 +640,12 @@ h1 {
   }
 
   .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     min-height: 88svh;
-    padding-bottom: 136px;
+    gap: 28px;
+    padding-bottom: 28px;
   }
 
   .hero-media img {
@@ -666,8 +670,14 @@ h1 {
   }
 
   .signal-strip {
-    right: 16px;
-    left: 16px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
   }
 
   .signal-strip span {
@@ -717,16 +727,30 @@ h1 {
 
 @media (max-width: 680px) {
   .site-nav {
-    align-items: flex-start;
+    width: min(calc(100% - 24px), 1120px);
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .brand-mark {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
   }
 
   .site-nav nav {
-    max-width: 252px;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 2px;
+    min-width: 0;
   }
 
   .site-nav nav a {
-    padding: 8px 9px;
-    font-size: 0.82rem;
+    padding: 8px 7px;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
 
   .hero {
@@ -777,6 +801,24 @@ h1 {
   .contact-links a {
     align-items: flex-start;
     overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 370px) {
+  .site-nav {
+    gap: 6px;
+    padding: 7px;
+  }
+
+  .brand-mark {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-nav nav a {
+    padding: 7px 5px;
+    font-size: 0.7rem;
   }
 }
 
